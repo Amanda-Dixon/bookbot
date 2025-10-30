@@ -20,5 +20,15 @@ def get_num_chars(text):
                   num_chars[char] = 1      
      return num_chars
 
+## helper function to sort list of dictionaries by key value
+def sort_items(items):
+      return items["num"]
 
-
+## Function that returns sorted list of dictionaries of characters and their values
+def sorted_chars(num_characters):
+      character_list = []
+      for k in num_characters:
+            character_info = {"char" : k, "num" : num_characters[k]}
+            character_list.append(character_info)
+      character_list.sort(reverse=True, key=sort_items)
+      return character_list
